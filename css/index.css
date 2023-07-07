@@ -3458,6 +3458,12 @@ pre .coffeescript .title {
   opacity: 1;
   transform: translateY(0) scale(1);
 }
+@media (max-width: 1200px) {
+  .trm-top-bar .trm-logo-text {
+    display: inline;
+    font-size: 30px !important;
+  }
+}
 :root {
   --primary: #5a5df0;
   --primary-70: rgba(90, 93, 240, 0.7);
