@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="x5-fullscreen" content="true">
+<meta name="full-screen" content="yes">
+<meta name="theme-color" content="#317EFB" />
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=0" name="viewport">
+<meta name="description" content="12345CADCBCCABBAABCCACACADB 1、在窗体中添加两个文本框（Name属性分别为Text1和Text2）．一个命令按钮（Name属性为Command1）和一个标签（Name属性为Label1）。编写如下程序：Private Sub Form_Load()Text1.Text &#x3D; “”Text2.Text &#x3D; “”End Sub要求程序运行后，在第一个文本框">
+<meta property="og:type" content="article">
+<meta property="og:title" content="可视化程序设计">
+<meta property="og:url" content="http://example.com/2023/07/07/%E5%8F%AF%E8%A7%86%E5%8C%96%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/index.html">
+<meta property="og:site_name" content="子非明月">
+<meta property="og:description" content="12345CADCBCCABBAABCCACACADB 1、在窗体中添加两个文本框（Name属性分别为Text1和Text2）．一个命令按钮（Name属性为Command1）和一个标签（Name属性为Label1）。编写如下程序：Private Sub Form_Load()Text1.Text &#x3D; “”Text2.Text &#x3D; “”End Sub要求程序运行后，在第一个文本框">
+<meta property="og:locale">
+<meta property="article:published_time" content="2023-07-07T07:25:30.000Z">
+<meta property="article:modified_time" content="2023-07-08T14:37:05.818Z">
+<meta property="article:author" content="ShiYi">
+<meta name="twitter:card" content="summary">
+
+
+<title >可视化程序设计</title>
+
+<!-- Favicon -->
+
+    <link href='/img/favicon.png?v=2.0.9' rel='icon' type='image/png' sizes='16x16' ></link>
+
+
+    <link href='/img/favicon.png?v=2.0.9' rel='icon' type='image/png' sizes='32x32' ></link>
+
+
+    <link href='/img/favicon.png?v=2.0.9' rel='apple-touch-icon' sizes='180x180' ></link>
+
+
+    <link href='/site.webmanifest' rel='manifest' ></link>
+
+
+<!-- Plugin -->
+
+
+
+
+    
+<link rel="stylesheet" href="/css/plugins/bootstrap.row.css">
+
+    
+<link rel="stylesheet" href="https://unpkg.com/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css">
+
+    
+<link rel="stylesheet" href="https://unpkg.com/@fancyapps/ui@4.0/dist/fancybox.css">
+
+    
+    
+
+
+
+
+<!-- Icon -->
+
+    
+<link rel="stylesheet" href="/css/plugins/font-awesome.min.css">
+
+
+
+
+<!-- Variable -->
+<script>window.ASYNC_CONFIG = {"hostname":"example.com","author":"ShiYi","root":"/","typed_text":["度过一生"],"theme_version":"2.0.9","theme":{"switch":true,"default":"style-light"},"favicon":{"logo":"img/favicon.png","icon16":"img/favicon.png","icon32":"img/favicon.png","appleTouchIcon":"img/favicon.png","webmanifest":"/site.webmanifest","visibilitychange":true,"hidden":"/failure.ico","showText":"(/≧▽≦/)咦！又好了！","hideText":"(●—●)喔哟，崩溃啦！"},"i18n":{"placeholder":"搜索文章...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）","author":"本文作者：","copyright_link":"本文链接：","copyright_license_title":"版权声明：","copyright_license_content":"本博客所有文章除特别声明外，均默认采用 undefined 许可协议。","copy_success":"复制成功","copy_failure":"复制失败","open_read_mode":"进入阅读模式","exit_read_mode":"退出阅读模式","notice_outdate_message":"距离上次更新已经 undefined 天了, 文章内容可能已经过时。","just":"刚刚","min":"分钟前","hour":"小时前","day":"天前","month":"个月前"},"swup":false,"plugin":{"flickr_justified_gallery":"https://unpkg.com/flickr-justified-gallery@latest/dist/fjGallery.min.js"},"icons":{"sun":"far fa-sun","moon":"far fa-moon","play":"fas fa-play","email":"far fa-envelope","next":"fas fa-arrow-right","calendar":"far fa-calendar-alt","clock":"far fa-clock","user":"far fa-user","back_top":"fas fa-arrow-up","close":"fas fa-times","search":"fas fa-search","reward":"fas fa-hand-holding-usd","user_tag":"fas fa-user-alt","toc_tag":"fas fa-th-list","read":"fas fa-book-reader","arrows":"fas fa-arrows-alt-h","double_arrows":"fas fa-angle-double-down","copy":"fas fa-copy"},"icontype":"font","highlight":{"plugin":"highlighjs","theme":true,"copy":true,"lang":true,"title":"mac","height_limit":false}};</script>
+<script id="async-page-config">window.PAGE_CONFIG = {"isPost":true,"isHome":false,"postUpdate":"2023-07-08 22:37:05"};</script>
+
+<!-- Theme mode css -->
+<link data-swup-theme rel="stylesheet" href="/css/index.css?v=2.0.9" id="trm-switch-style">
+<script>
+    let defaultMode = ASYNC_CONFIG.theme.default !=='auto' ?  ASYNC_CONFIG.theme.default : (window.matchMedia("(prefers-color-scheme: light)").matches ? 'style-light' : 'style-dark')
+    let catchMode = localStorage.getItem('theme-mode') || defaultMode;
+    let type = catchMode === 'style-dark' ? 'add' : 'remove';
+    document.documentElement.classList[type]('dark')
+</script>
+
+<!-- CDN -->
+
+
+    
+    
+
+
+
+<!-- Site Analytics -->
+ 
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+
+  <!-- app wrapper -->
+  <div class="trm-app-frame">
+
+    <!-- page preloader -->
+    <div class="trm-preloader">
+    <div class="trm-holder">
+        <div class="preloader">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+</div>
+    <!-- page preloader end -->
+
+    <!-- change mode preloader -->
+    <div class="trm-mode-swich-animation-frame">
+    <div class="trm-mode-swich-animation">
+        <i class="i-sun"><i class="iconfont far fa-sun"></i></i>
+        <div class="trm-horizon"></div>
+        <i class="i-moon"><i class="iconfont far fa-moon"></i></i>
+    </div>
+</div>
+    <!-- change mode preloader end -->
+
+      <!-- scroll container -->
+      <div id="trm-dynamic-content" class="trm-swup-animation">
+        <div id="trm-scroll-container" class="trm-scroll-container" data-scroll-container style="opacity: 0">
+          <div data-scroll-section id="content" class="trm-scroll-section">
+
+            <div class="locomotive-scroll__sticky-target" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; pointer-events: none;"></div>
+
+            <!-- top bar -->
+            <header class="trm-top-bar" data-scroll data-scroll-sticky data-scroll-target=".locomotive-scroll__sticky-target" data-scroll-offset="-10">
+	<div class="container">
+		<div class="trm-left-side">
+			<!-- logo -->
+<a href="/" class="trm-logo-frame trm-anima-link">
+    
+        <img alt="logo" src="/img/favicon.png">
+    
+    
+        <div class="trm-logo-text">
+            SY.<span>ZHAN</span>
+        </div>
+    
+</a>
+<!-- logo end -->
+		</div>
+		<div class="trm-right-side">
+			<!-- menu -->
+<div class="trm-menu">
+    <nav>
+        <ul>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/" target="">
+                    HOME
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/gallery" target="">
+                    GALLERY
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/links" target="">
+                    LINK
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/about" target="">
+                    ABOUT
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/download" target="">
+                    DOWNLOAD
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="#" target="">
+                    ARTICLE
+                </a>
+                
+                <ul>
+                    
+                    <li>
+                        <a  href="/tags" target="">
+                            TAGS
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a  href="/categories" target="">
+                            CATEGORY
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a  href="/archives" target="">
+                            ARCHIVE
+                        </a>
+                    </li>
+                    
+                </ul>
+                
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+<!-- menu end -->
+			
+    <!-- mode switcher place -->
+    <div class="trm-mode-switcher-place">
+        <div class="trm-mode-switcher">
+            <i class="iconfont far fa-sun"></i>
+            <input class="tgl tgl-light" id="trm-swich" type="checkbox">
+            <label class="trm-swich" for="trm-swich"></label>
+            <i class="iconfont far fa-moon"></i>
+        </div>
+    </div>
+    <!-- mode switcher place end -->
+
+			
+		</div>
+		<div class="trm-menu-btn">
+			<span></span>
+		</div>
+	</div>
+</header>
+            <!-- top bar end -->
+
+            <!-- body -->
+            
+<div class="trm-content-start">
+    <!-- banner -->
+    <div class="trm-banner" data-scroll data-scroll-direction="vertical">
+    
+    <!-- banner video cover -->
+    <video autoplay="autoplay" loop muted playsinline webkit-playinginline class="trm-banner-cover" data-scroll data-scroll-direction="vertical" data-scroll-speed="-3">
+        <source src="/img/trailer.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+        Your browser does not support HTML5 video.
+    </video>
+    <!-- banner video cover end -->
+    
+
+    <!-- banner content -->
+    <div class="trm-banner-content trm-overlay">
+        <div class="container" data-scroll data-scroll-direction="vertical" data-scroll-speed="0">
+            <div class="row">
+                
+                <div class="col-lg-12">
+
+                    <!-- banner title -->
+                    <div class="trm-banner-text trm-text-center ">
+                        <div class="trm-label trm-mb-20">
+                            NEWS LETTER
+                        </div>
+                        <h1 class="trm-mb-30 trm-hsmb-font">
+                            可视化程序设计
+                        </h1>
+
+                        
+                            <ul class="trm-breadcrumbs trm-label">
+                                <li>
+                                    <a href="/" class="trm-anima-link">Home</a>
+                                </li>
+                                <li>
+                                    <span>
+                                        2023
+                                    </span
+                                ></li>
+                            </ul>
+                        
+                    </div>
+                    <!-- banner title end -->
+
+                    <!-- scroll hint -->
+                    <a href="#about-triger" data-scroll-to="#about-triger" data-scroll-offset="-130" class="trm-scroll-hint-frame">
+                        <div class="trm-scroll-hint"></div>
+                        <span class="trm-label">Scroll down</span>
+                    </a>
+                    <!-- scroll hint end -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- banner content end -->
+</div>
+    <!-- banner end -->
+    <div class="container">
+        <div class="row">
+            
+            <div id="page-content" class="col-lg-12">
+                <div class="trm-content" id="trm-content">
+                    <div data-scroll data-scroll-repeat data-scroll-offset="500" id="about-triger"></div>
+
+                    <div id="post-info" class="row hidden-sm">
+    <div class="col-sm-4">
+        <div class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-calendar-alt trm-icon"></i><br>
+            07/07
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-clock trm-icon"></i><br>
+            15:25
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div id="post-author" class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-user trm-icon"></i><br>
+            ShiYi
+        </div>
+    </div>
+</div>
+<div class="trm-card ">
+    <article id="article-container" class="trm-publication">
+    <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">CADCB</span><br><span class="line">CCABB</span><br><span class="line">AABCC</span><br><span class="line">ACACA</span><br><span class="line">DB</span><br></pre></td></tr></table></figure>
+<p>1、在窗体中添加两个文本框（Name属性分别为Text1和Text2）．一个命令按钮（Name属性为Command1）和一个标签（Name属性为Label1）。编写如下程序：<br>Private Sub Form_Load()<br>Text1.Text &#x3D; “”<br>Text2.Text &#x3D; “”<br>End Sub<br>要求程序运行后，在第一个文本框（Text1）和第二个文本框（Text2）中分别输入123和123，然后单击命令按钮，在标签中显示结果为246。能实现上述功能的程序段是（  C  ）。<br>A．Private Sub Command1_Click()<br>   a &#x3D; Text1.Text + Text2.Text<br>   Label1.Caption &#x3D; Str(a)<br>   End Sub<br>B．Private Sub Command1_Click()<br>   a &#x3D; Val(Text1.Text + Text2.Text)<br>   Label1.Caption &#x3D; Str(a)<br>   End Sub<br>C．Private Sub Command1_Click()<br>   a &#x3D; Val(Text1.Text) + Val(Text2.Text)<br>   Label1.Caption &#x3D; Str(a)<br>   End Sub<br>D．Private Sub Command1_Click()<br>   val(a) &#x3D; Text1.Text + Text2.Text<br>   Label1.Caption &#x3D; Str(a)<br>   End Sub                       </p>
+<p>2、滚动条控件（如图所示）的Largechange属性所设置的是（    A   ）。<br>A．单击滚动条和滚动箭头之间的区域时，滚动条控件Value属性值的改变量<br>B．滚动条中滚动块的最大移动位置<br>C．滚动条中滚动块的最大移动范围<br>D．滚动条控件无该属性</p>
+<p>3、下列四个控件中需要另外添加的是(  D   )<br>A．TextBox<br>B.Label<br>C.CommandButton<br>D.ADODC</p>
+<p>4、窗体中有3个按钮Command1．Command2和Command3，该程序的功能是当单击按钮Command1时，按钮2可用，按钮3不可见，正确的程序是（   C      ）。<br>A．Private Sub Command1_Click( )<br>Command2.Visible&#x3D;True<br>Command3.Visible&#x3D;False<br>End Sub<br>B．Private Sub Command1_Click( )<br>Command2.Enabled&#x3D;True<br>Command3.Enabled&#x3D;False<br>End Sub<br>C．Private Sub Command1_Click( )<br>Command2.Enable&#x3D;True<br>Command3.Visible&#x3D;False<br>End Sub<br>D．Private Sub Command1_Click( )<br>Command2.Enabled&#x3D;False<br>Command3.Visible&#x3D;False<br>End Sub</p>
+<p>5、以下能在窗体Form1的标题栏中显示“VisualBasic窗体”的语句是 （  B  ）<br>A．Form1.Name&#x3D;”VisualBasic窗体”<br>B．Form1.Caption&#x3D;”VisualBasic窗体”<br>C．Form1.Title&#x3D;”VisualBasic窗体”<br>D．Form1.Text&#x3D;”VisualBasic窗体”</p>
+<p>6、以下为窗体文件扩展名的是 (     C     )<br>A．.bas<br>B．.cls<br>C．.frm<br>D．.res </p>
+<p>7、下列可以把当前目录下的图形文件pic1.jpg装入图片框Picture1中的语句是（  C   ）。<br>A．picture&#x3D;”pic1.jpg”<br>B．Picture1.Handle&#x3D;” pic1.jpg”<br>C．Picture1.Picture&#x3D;LoadPicture(” pic1.jpg”)<br>D．Picture&#x3D;LoadPicture(” pic1.jpg”)</p>
+<p>8、下列（ A  ）不是VB程序的基本结构。<br>A) 层次结构<br>B)选择结构<br>C) 循环结构<br>D) 顺序结构</p>
+<p>9、下列选项中，合法的变量名是(   B    )<br>A．c%aaa<br>B．sum__3<br>C．Else<br>D．5persons</p>
+<p>10、以下程序段的输出结果为（   B   ）。<br>X&#x3D;1<br>Y&#x3D;4<br>Do Until Y&gt;4<br>X&#x3D;X*Y<br>Y&#x3D;Y+1<br>Loop<br>Print X<br>A．l<br>B．4<br>C．8<br>D．20 </p>
+<p>11、执行下列语句后整型变量a的值是（ A   ）。<br>If(3-2)&gt;2 Then<br>a&#x3D;10<br>Else If(10／2)&#x3D;6 Then<br>a&#x3D;20<br>Else<br>a&#x3D;30<br>End If<br>A．30<br>B．20<br>C．10<br>D．不确定</p>
+<p>12、假定有以下循环结构：<br>Do until条件<br>循环体<br>Loop<br>则下列说法正确的是（  A   ）。<br>A．如果“条件”是一个为1的常数，则一次循环体也不执行<br>B．如果“条件”是一个为1的常数，则至少执行一次循环体<br>C．如果“条件”是一个不为-1的常数，则至少执行一次循环体<br>D．	不论“条件”是否为“真”，至少要执行一次循环体</p>
+<p>13、如果要向工具箱中加入控件和部件，可以利用＂工程＂菜单中的（ B    ）命令。<br>A．引用<br>B．部件<br>C．工程属性<br>D．添加窗体</p>
+<p>14、在窗体上画一个名称为Command1的命令按钮，然后编写如下事件过程：<br>  Private Sub Command1_Click()<br>   x&#x3D;InputBox(“Input”)<br>   Select Case x<br>    Case 1,3<br>        Print “分支 1”<br>    Case Is &gt;4<br>        Print “分支 2”<br>    Case Else<br>        Print “Else 分支 “<br>End Select<br>End Sub<br>程序运行后，如果在输入对话框中输入2，则窗体上显示的是（   C   ）<br>A．分支1<br>B．分支2<br>C．Else分支<br>D．程序出错</p>
+<p>15、控件数组中的每个控件有着相同的name属性,那么我们用它们的哪一个属性来标识它们呢? ( C  )<br>A．name<br>B．caption<br>C．index<br>D．passwordchar</p>
+<p>16、用x,y,z表示三角形的三条边,条件”三角形任意两边之和大于第三边” 的布乐表达式可以用(  A   )表示<br>A．x+y&gt;z and x+z &gt;y and y+z&gt;x<br>B．x+y&lt;z or x+z&lt;y or y+z&lt;x<br>C．not (x+y&lt;z or x+z&lt;y or y+z&lt;x)<br>D．x+y&gt;&#x3D;z or x+z&gt;&#x3D;y or y+z&gt;&#x3D;x</p>
+<p>17、在代码中定义了一个子过程：<br>Sub P(a,b)<br>…<br>End Sub<br>下面（ C  ）调用该过程的格式是正确的。<br>A．Call P<br>B．Call P 10,20<br>C．Call P(10,20)<br>D．P(10,20) </p>
+<p>18、允许在菜单项的左边设置打勾标记，下面哪种论述是正确的？（    A     ）。<br>A．在复选项中输入“√”<br>B 在索引项中输入“√”<br>C．在标题项中输入&amp;然后打勾<br>D 在有效项中输入“√”</p>
+<p>19、实现图像框大小适应图像大小的属性值是(    C     )<br>A 设属性autosize 值为 false<br>B 设属性autosize值为true<br>C 设属性stretch值为false<br>D 设属性stretch值为true</p>
+<p>20、一个工程中包含两个名称分别为Form1．Form2的窗体．一个名称为Func的标准模块。假定在Form1．Form2和Func中分别建立了自定义过程，其定义格式为：<br>Form1中定义的过程：<br>Private Sub Fun1( )<br>……<br>End Sub<br>Form2中定义的过程：<br>Private Sub Fun2( )<br>……<br>End Sub<br>Func中定义的过程：<br>Private Sub Fun3( )<br>……<br>End Sub<br>在调用上述过程的程序中，如果不指明窗体或模块的名称，则以下叙述中正确的是（    A   ）。<br>A．上述三个过程都只能在各自被定义的模块中调用<br>B． Fun1和Fun2过程能够在工程中各个窗体或模块中被调用<br>C．上述三个过程都可以在工程中的任何窗体或模块中被调用<br>D． 只在Fun3过程能够被工程中各窗体或模块调用</p>
+<p>21、可以同时删除字符前导和尾部空白的函数是（  D   ）。<br>A．Mid<br>B．Rtrim<br>C． Ltrim<br>D． Trim</p>
+<p>22、在窗体中添加一个命令按钮（Name属性为Command1），然后编写如下代码：<br>Private Sub Command1_Click()<br>x &#x3D; InputBox(“请输入整数”)<br>a &#x3D; f1(Val(x))<br>Print a<br>End Sub<br>运行程序后，如果单击命令按钮，则显示一个输入对话框，在该对话框中输入一个整数，并用这个整数作为实参调用函数过程f1。在f1中判断所输入的整数是否是奇数，如果是奇数，过程f1返回1，否则返回0。能够正确实现上述功能的代码是（   B   ）。<br>A．Function f1(ByRef b As Integer)<br>If b Mod 2 &#x3D; 0 Then<br>return 0<br>Else<br>return 1<br>End If<br>End Function<br>B．Function f1(ByRef b As Integer)<br>If b Mod 2 &#x3D; 0 Then<br>f1&#x3D;0<br>Else<br>f1&#x3D;1<br>End If<br>End Function<br>C．Function f1(ByRef b As Integer)<br>If b Mod 2 &#x3D; 0 Then<br>f1&#x3D;1<br>Else<br>f1&#x3D;0<br>End If<br>End Function<br>D．f1(ByRef b As Integer)<br>If b Mod 2 &#x3D; 0 Then<br>return 0<br>Else<br>return 1<br>End If<br>End Function</p>
+<p>23、若要在字符串asdgewl中取dge,则使用函数 <code>(Mid$(&quot;asdgewl&quot;,3,3)</code> 实现。</p>
+<p>24、将焦点定位于命令按钮Command1之上的语句为 <code>Command1.SetFocus </code> 。   </p>
+<p>25、设a&#x3D;2,b&#x3D;3,c&#x3D;4,d&#x3D;5,则NOT a&lt;&#x3D;c OR 4*c&#x3D;b^2 AND b&lt;&gt; a＋c 的值为 <code>False </code> 。</p>
+<p>26、静态数组是指 <code>数组元素的个数</code> 是固定不变的数组。</p>
+<p>27、写出用随机函数产生一个200至300之间整数的VB表达式 <code>200+Int(Rnd*100)</code> 。</p>
+<p>28、把条件1&lt;&#x3D;X&lt;12写成VB关系表达式为 <code>x&gt;=1 and x&lt;12</code> 。</p>
+<p>29、由For  k&#x3D;35 to 0 step 3:next k循环语句控制的循环次数是 <code>0</code> 。</p>
+<p>30、把“Visual Basic程序设计”添加到列表框1stBooks的语句为 <code>lstBooks.AddItem&quot;Visual biasic 程序设计&quot; </code> 。        </p>
+<p>31、某控件在程序运行时是可见的，则其 <code>Visible</code> 属性设置为True。</p>
+<p>32、VB事件的过程 <code>响应某事件所执行的程序代码</code> 。</p>
+<p>33、要让文本框text1显示多行，应该设置text1的Multilane属性为 <code>true</code> 。</p>
+<p>34、语句Cirele(1000,1000),500,vbRed,0.5绘制的是 <code>椭圆</code> 形。</p>
+<p>35、建立打开文件、颜色对话框所使用的方法分别为 <code>showopen</code> 、 <code>ShowColor</code> 。</p>
+<p>36、菜单分为下拉式菜单和弹出式菜单，菜单总与 <code>窗体</code> 相关联，设计菜单需要在菜单编辑器中设计。</p>
+<p>37、VB事件是 <code>作用在对象上</code> ，并且能被对象识别的动作。</p>
+<p>38.求一元二次方程ax2+bx+c&#x3D;0的根。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">Private Sub cmdCalcu_Click()</span><br><span class="line">    Dim a As Single, b As Single, c As Single</span><br><span class="line">    Dim D As Single</span><br><span class="line">    Dim x1, x2  </span><br><span class="line">  </span><br><span class="line">    a = Val(Text1.Text)</span><br><span class="line">    b = Val(Text2.Text)</span><br><span class="line">    c = Val(Text3.Text)</span><br><span class="line">    D = 呵呵b2-4ac呵呵            </span><br><span class="line">    If a = 0 Then            </span><br><span class="line">        呵X1=&quot;&quot;呵     </span><br><span class="line">        x2 = &quot;&quot;</span><br><span class="line">    ElseIf 呵D=0呵 Then        </span><br><span class="line">       x1 = -b / (2 * a)</span><br><span class="line">       x2 = x1</span><br><span class="line">    ElseIf D &gt; 0 Then   </span><br><span class="line">        x1 = (-b + Sqr(D)) / (2 * a)</span><br><span class="line">        x2 = 呵(-b-sqr(D))/(2*a)呵</span><br><span class="line">    Else</span><br><span class="line">        x1 = &quot;无实根&quot;          </span><br><span class="line">       呵X2=X1呵      </span><br><span class="line">    End If</span><br><span class="line">    Text4.Text = Format(x1, &quot;0.####&quot;)</span><br><span class="line">    Text5.Text = Format(x2, &quot;0.####&quot;)</span><br><span class="line">End Sub</span><br></pre></td></tr></table></figure>
+
+<p>39.打印以下杨辉三角形<br>1<br>1   1<br>1   2   1<br>1   3   3    1<br>1   4   6    4    1</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">Dim Q() As Integer</span><br><span class="line">N = InputBox(&quot;PLEASE INPUT N&quot;)</span><br><span class="line">ReDim Q(N, N)</span><br><span class="line">For I = 1 To N</span><br><span class="line">    For J = 1 To N</span><br><span class="line">        Q(I, J) =  呵0呵       </span><br><span class="line">    Next J</span><br><span class="line">Next I</span><br><span class="line">For K = 0 To  ( 呵N – 1呵 )</span><br><span class="line">    Q(K + 1, 1) = 1</span><br><span class="line">    Print 1;</span><br><span class="line">    For I = 1 To K</span><br><span class="line">        Q(K + 1, I + 1) =  ( 呵Q(K, I + 1)呵 ) + Q(K, I)</span><br><span class="line">        Print  (  呵Q(K + 1, I + 1)呵  );</span><br><span class="line">    Next I</span><br><span class="line">   Print</span><br><span class="line">Next K</span><br></pre></td></tr></table></figure>
+
+<p>40.按下图所示，写出相应的代码，该程序是求100——500之间的质数和质数之和！</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Prirate  sub  command1_click()</span><br><span class="line">Dim a,b</span><br><span class="line">For a=101 to 500 step 2</span><br><span class="line">List1.additem a</span><br><span class="line">B=b+a</span><br><span class="line">Next </span><br><span class="line">label.caption=”101-500 之间的奇数&quot;+hc(13)+“和为:&quot;&amp; b</span><br><span class="line">End sub</span><br><span class="line"></span><br><span class="line">Private sub command2.click()</span><br><span class="line">List1.clear</span><br><span class="line">End sub</span><br></pre></td></tr></table></figure>
+</article>
+    
+    
+
+</div>
+<div id="post-next-prev" class="row">
+    <div class="col-lg-12">
+        <!-- title -->
+        <h5 class="trm-title-with-divider">
+            其他文章
+            <span data-number="02"></span>
+        </h5>
+    </div>
+    
+    
+        <div class="col-lg-6">
+    <div class="trm-blog-card trm-scroll-animation" data-scroll data-scroll-offset="40">
+        <a href="/2023/07/07/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="trm-cover-frame trm-anima-link">
+            
+            
+                <img alt="cover" class="no-fancybox" src="https://img1.baidu.com/it/u=1454229867,1360921993&fm=253&fmt=auto&app=138&f=PNG?w=1036&h=500">
+            
+        </a>
+        
+        <div class="trm-card-descr">
+            <div class="trm-label trm-category trm-mb-20">
+                <a href=" #.">
+                    未分类
+                </a>
+            </div>
+            <h5>
+                <a href="/2023/07/07/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="trm-anima-link">
+                    数据库原理与应用
+                </a>
+            </h5>
+            <div class="trm-divider trm-mb-20 trm-mt-20"></div>
+            <ul class="trm-card-data trm-label">
+                <li>23/07/07</li>
+                <li>15:25</li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</div>
+    
+</div>
+
+    
+
+
+
+                    <div class="trm-divider footer-divider"></div>
+
+                    <!-- footer -->
+                    <footer class="trm-scroll-animation" data-scroll data-scroll-offset="50">
+
+    
+
+    
+
+    
+        <div class="trm-footer-item">
+            <span>
+                由 <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 驱动 v6.3.0
+            </span>
+            <span class="footer-separator" data-separator=" | "></span>
+            <span> 
+                主题 - 
+                <a rel="noopener" href='https://github.com/MaLuns/hexo-theme-async' target='_blank'>Async</a>
+                v2.0.9
+            </span>
+        </div>
+      
+
+    
+        <div class="trm-footer-item">
+            博客已萌萌哒运行 <span id="since" class="trm-accent-color"></span> 天
+        </div>
+     
+
+     
+</footer>
+
+<script>
+    function show_date_time () {
+        var BirthDay = new Date("07/02/2023 17:00:00");
+        var today = new Date();
+        var timeold = (today.getTime() - BirthDay.getTime());
+        var msPerDay = 24 * 60 * 60 * 1000
+        var day = Math.floor(timeold / msPerDay)
+        since.innerHTML = day
+    }
+    show_date_time()
+</script>
+ 
+                    <!-- footer end -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+            <!-- body end -->
+
+            <div class="trm-fixed-container" data-scroll data-scroll-sticky data-scroll-target=".locomotive-scroll__sticky-target" data-scroll-offset="-10">
+    
+    
+    <div id="trm-back-top" class="trm-fixed-btn" data-title="回到顶部">
+        <i class="iconfont fas fa-arrow-up"></i>
+    </div>
+</div>
+          </div>
+        </div>
+      </div>
+      <!-- scroll container end -->
+
+  </div>
+  <!-- app wrapper end -->
+
+  
+  <!-- Plugin -->
+
+
+
+
+    
+    
+<script src="https://unpkg.com/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+
+    
+<script src="https://unpkg.com/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+
+    
+
+    
+        <script src="/js/plugins/typing.js?v=2.0.9"></script>
+    
+
+    
+
+    <!-- 数学公式 -->
+    
+
+    <!-- 评论插件 -->
+    
+        
+
+        
+    
+
+
+
+<!-- CDN -->
+
+
+    
+
+    
+
+    
+
+
+
+
+    <!-- Service Worker -->
+    
+    <!-- baidu push -->
+    
+
+
+<script id="async-script" src="/js/main.js?v=2.0.9"></script>
+
+</body>
+
+</html>
