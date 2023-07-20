@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="x5-fullscreen" content="true">
+<meta name="full-screen" content="yes">
+<meta name="theme-color" content="#317EFB" />
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=0" name="viewport">
+<meta name="description" content="数据中心网络搭建一、任务描述 某公司 2023 年业务发展迅速，计划在常州和无锡分别开设分公司扩展市场，FW1 是总公司的网络出口设备，SW1 是总公司的核心交换机，AC总公司提供无线管理功能；FW2 是常州分公司的出口设备，SW2 是常州分公司的核心交换机，RT1 是无锡分公司的出口设备，SW3 既是无锡分公司的接入交换机，同时也用来模拟 internet 交换机；因为总公司和常州分公司之间需要">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2023年江苏选拔赛网络系统 - 模块A">
+<meta property="og:url" content="http://example.com/2023/07/15/Linux%E7%AE%A1%E7%90%86/index.html">
+<meta property="og:site_name" content="子非明月">
+<meta property="og:description" content="数据中心网络搭建一、任务描述 某公司 2023 年业务发展迅速，计划在常州和无锡分别开设分公司扩展市场，FW1 是总公司的网络出口设备，SW1 是总公司的核心交换机，AC总公司提供无线管理功能；FW2 是常州分公司的出口设备，SW2 是常州分公司的核心交换机，RT1 是无锡分公司的出口设备，SW3 既是无锡分公司的接入交换机，同时也用来模拟 internet 交换机；因为总公司和常州分公司之间需要">
+<meta property="og:locale">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="article:published_time" content="2023-07-15T07:25:29.000Z">
+<meta property="article:modified_time" content="2023-07-20T07:48:28.483Z">
+<meta property="article:author" content="ShiYi">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/404.jpg">
+
+
+<title >2023年江苏选拔赛网络系统 - 模块A</title>
+
+<!-- Favicon -->
+
+    <link href='/img/favicon.png?v=2.0.9' rel='icon' type='image/png' sizes='16x16' ></link>
+
+
+    <link href='/img/favicon.png?v=2.0.9' rel='icon' type='image/png' sizes='32x32' ></link>
+
+
+    <link href='/img/favicon.png?v=2.0.9' rel='apple-touch-icon' sizes='180x180' ></link>
+
+
+    <link href='/site.webmanifest' rel='manifest' ></link>
+
+
+<!-- Plugin -->
+
+
+
+
+    
+<link rel="stylesheet" href="/css/plugins/bootstrap.row.css">
+
+    
+<link rel="stylesheet" href="https://unpkg.com/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css">
+
+    
+<link rel="stylesheet" href="https://unpkg.com/@fancyapps/ui@4.0/dist/fancybox.css">
+
+    
+    
+
+
+
+
+<!-- Icon -->
+
+    
+<link rel="stylesheet" href="/css/plugins/font-awesome.min.css">
+
+
+
+
+<!-- Variable -->
+<script>window.ASYNC_CONFIG = {"hostname":"example.com","author":"ShiYi","root":"/","typed_text":["度过一生"],"theme_version":"2.0.9","theme":{"switch":true,"default":"style-light"},"favicon":{"logo":"img/favicon.png","icon16":"img/favicon.png","icon32":"img/favicon.png","appleTouchIcon":"img/favicon.png","webmanifest":"/site.webmanifest","visibilitychange":true,"hidden":"/failure.ico","showText":"(/≧▽≦/)咦！又好了！","hideText":"(●—●)喔哟，崩溃啦！"},"i18n":{"placeholder":"搜索文章...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）","author":"本文作者：","copyright_link":"本文链接：","copyright_license_title":"版权声明：","copyright_license_content":"本博客所有文章除特别声明外，均默认采用 undefined 许可协议。","copy_success":"复制成功","copy_failure":"复制失败","open_read_mode":"进入阅读模式","exit_read_mode":"退出阅读模式","notice_outdate_message":"距离上次更新已经 undefined 天了, 文章内容可能已经过时。","just":"刚刚","min":"分钟前","hour":"小时前","day":"天前","month":"个月前"},"swup":false,"plugin":{"flickr_justified_gallery":"https://unpkg.com/flickr-justified-gallery@latest/dist/fjGallery.min.js"},"icons":{"sun":"far fa-sun","moon":"far fa-moon","play":"fas fa-play","email":"far fa-envelope","next":"fas fa-arrow-right","calendar":"far fa-calendar-alt","clock":"far fa-clock","user":"far fa-user","back_top":"fas fa-arrow-up","close":"fas fa-times","search":"fas fa-search","reward":"fas fa-hand-holding-usd","user_tag":"fas fa-user-alt","toc_tag":"fas fa-th-list","read":"fas fa-book-reader","arrows":"fas fa-arrows-alt-h","double_arrows":"fas fa-angle-double-down","copy":"fas fa-copy"},"icontype":"font","highlight":{"plugin":"highlighjs","theme":true,"copy":true,"lang":true,"title":"mac","height_limit":false}};</script>
+<script id="async-page-config">window.PAGE_CONFIG = {"isPost":true,"isHome":false,"postUpdate":"2023-07-20 15:48:28"};</script>
+
+<!-- Theme mode css -->
+<link data-swup-theme rel="stylesheet" href="/css/index.css?v=2.0.9" id="trm-switch-style">
+<script>
+    let defaultMode = ASYNC_CONFIG.theme.default !=='auto' ?  ASYNC_CONFIG.theme.default : (window.matchMedia("(prefers-color-scheme: light)").matches ? 'style-light' : 'style-dark')
+    let catchMode = localStorage.getItem('theme-mode') || defaultMode;
+    let type = catchMode === 'style-dark' ? 'add' : 'remove';
+    document.documentElement.classList[type]('dark')
+</script>
+
+<!-- CDN -->
+
+
+    
+    
+
+
+
+<!-- Site Analytics -->
+ 
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+
+  <!-- app wrapper -->
+  <div class="trm-app-frame">
+
+    <!-- page preloader -->
+    <div class="trm-preloader">
+    <div class="trm-holder">
+        <div class="preloader">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+</div>
+    <!-- page preloader end -->
+
+    <!-- change mode preloader -->
+    <div class="trm-mode-swich-animation-frame">
+    <div class="trm-mode-swich-animation">
+        <i class="i-sun"><i class="iconfont far fa-sun"></i></i>
+        <div class="trm-horizon"></div>
+        <i class="i-moon"><i class="iconfont far fa-moon"></i></i>
+    </div>
+</div>
+    <!-- change mode preloader end -->
+
+      <!-- scroll container -->
+      <div id="trm-dynamic-content" class="trm-swup-animation">
+        <div id="trm-scroll-container" class="trm-scroll-container" data-scroll-container style="opacity: 0">
+          <div data-scroll-section id="content" class="trm-scroll-section">
+
+            <div class="locomotive-scroll__sticky-target" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; pointer-events: none;"></div>
+
+            <!-- top bar -->
+            <header class="trm-top-bar" data-scroll data-scroll-sticky data-scroll-target=".locomotive-scroll__sticky-target" data-scroll-offset="-10">
+	<div class="container">
+		<div class="trm-left-side">
+			<!-- logo -->
+<a href="/" class="trm-logo-frame trm-anima-link">
+    
+        <img alt="logo" src="/img/favicon.png">
+    
+    
+        <div class="trm-logo-text">
+            SY.<span>ZHAN</span>
+        </div>
+    
+</a>
+<!-- logo end -->
+		</div>
+		<div class="trm-right-side">
+			<!-- menu -->
+<div class="trm-menu">
+    <nav>
+        <ul>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/" target="">
+                    HOME
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/gallery" target="">
+                    GALLERY
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/links" target="">
+                    LINK
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/about" target="">
+                    ABOUT
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/download" target="">
+                    DOWNLOAD
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="#" target="">
+                    ARTICLE
+                </a>
+                
+                <ul>
+                    
+                    <li>
+                        <a  href="/tags" target="">
+                            TAGS
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a  href="/categories" target="">
+                            CATEGORY
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a  href="/archives" target="">
+                            ARCHIVE
+                        </a>
+                    </li>
+                    
+                </ul>
+                
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+<!-- menu end -->
+			
+    <!-- mode switcher place -->
+    <div class="trm-mode-switcher-place">
+        <div class="trm-mode-switcher">
+            <i class="iconfont far fa-sun"></i>
+            <input class="tgl tgl-light" id="trm-swich" type="checkbox">
+            <label class="trm-swich" for="trm-swich"></label>
+            <i class="iconfont far fa-moon"></i>
+        </div>
+    </div>
+    <!-- mode switcher place end -->
+
+			
+		</div>
+		<div class="trm-menu-btn">
+			<span></span>
+		</div>
+	</div>
+</header>
+            <!-- top bar end -->
+
+            <!-- body -->
+            
+<div class="trm-content-start">
+    <!-- banner -->
+    <div class="trm-banner" data-scroll data-scroll-direction="vertical">
+    
+    <!-- banner video cover -->
+    <video autoplay="autoplay" loop muted playsinline webkit-playinginline class="trm-banner-cover" data-scroll data-scroll-direction="vertical" data-scroll-speed="-3">
+        <source src="/img/trailer.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+        Your browser does not support HTML5 video.
+    </video>
+    <!-- banner video cover end -->
+    
+
+    <!-- banner content -->
+    <div class="trm-banner-content trm-overlay">
+        <div class="container" data-scroll data-scroll-direction="vertical" data-scroll-speed="0">
+            <div class="row">
+                
+                <div class="col-lg-12">
+
+                    <!-- banner title -->
+                    <div class="trm-banner-text trm-text-center ">
+                        <div class="trm-label trm-mb-20">
+                            NEWS LETTER
+                        </div>
+                        <h1 class="trm-mb-30 trm-hsmb-font">
+                            2023年江苏选拔赛网络系统 - 模块A
+                        </h1>
+
+                        
+                            <ul class="trm-breadcrumbs trm-label">
+                                <li>
+                                    <a href="/" class="trm-anima-link">Home</a>
+                                </li>
+                                <li>
+                                    <span>
+                                        2023
+                                    </span
+                                ></li>
+                            </ul>
+                        
+                    </div>
+                    <!-- banner title end -->
+
+                    <!-- scroll hint -->
+                    <a href="#about-triger" data-scroll-to="#about-triger" data-scroll-offset="-130" class="trm-scroll-hint-frame">
+                        <div class="trm-scroll-hint"></div>
+                        <span class="trm-label">Scroll down</span>
+                    </a>
+                    <!-- scroll hint end -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- banner content end -->
+</div>
+    <!-- banner end -->
+    <div class="container">
+        <div class="row">
+            
+            <div id="page-content" class="col-lg-12">
+                <div class="trm-content" id="trm-content">
+                    <div data-scroll data-scroll-repeat data-scroll-offset="500" id="about-triger"></div>
+
+                    <div id="post-info" class="row hidden-sm">
+    <div class="col-sm-4">
+        <div class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-calendar-alt trm-icon"></i><br>
+            07/15
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-clock trm-icon"></i><br>
+            15:25
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div id="post-author" class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-user trm-icon"></i><br>
+            ShiYi
+        </div>
+    </div>
+</div>
+<div class="trm-card ">
+    <article id="article-container" class="trm-publication">
+    <h2 id="数据中心网络搭建"><a href="#数据中心网络搭建" class="headerlink" title="数据中心网络搭建"></a>数据中心网络搭建</h2><h3 id="一、任务描述"><a href="#一、任务描述" class="headerlink" title="一、任务描述"></a>一、任务描述</h3><blockquote>
+<p>某公司 2023 年业务发展迅速，计划在常州和无锡分别开设分公司扩展市场，FW1 是总公司的网络出口设备，SW1 是总公司的核心交换机，AC总公司提供无线管理功能；FW2 是常州分公司的出口设备，SW2 是常州分公司的核心交换机，RT1 是无锡分公司的出口设备，SW3 既是无锡分公司的接入交换机，同时也用来模拟 internet 交换机；因为总公司和常州分公司之间需要频繁传输数据，为了保障数据传输的稳定性和安全性，计划在总公司和常州分公司之间建立 ipsec VPN 保障数据的安全；</p>
+</blockquote>
+<h3 id="二、网络拓扑图"><a href="#二、网络拓扑图" class="headerlink" title="二、网络拓扑图"></a>二、网络拓扑图</h3><p><img src="/images/2023-07-20134119.png" alt="这里写图片描述" loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<h3 id="三、网络规划表"><a href="#三、网络规划表" class="headerlink" title="三、网络规划表"></a>三、网络规划表</h3><style>
+  .demo {text-align:center}  
+</style>
+<table border="1" class="demo">
+    <tr>
+        <th align="center">设备</th>
+        <th align="center">端口及IP地址</th>
+        <th align="center">对端设备</th>
+        <th align="center">端口</th>
+    </tr>
+    <tr>
+        <td rowspan="3" >FW1</td>
+        <td>eth0/1-2（trust 安全域）10.10.0.1/30</td>
+        <td>SW1</td>
+        <td>eth1/0/1-2</td>
+    </tr>
+    <tr>
+        <td>eth0/5（untrust 安全域）223.18.0.2/30</td>
+        <td>SW3 (internet)</td>
+        <td>eth1/0/18</td>
+    </tr>
+    <tr>
+        <td>loopback1（trust安全域）10.0.0.254/32</td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td rowspan="8" >SW1</td>
+        <td>vlan 1000 10.10.0.2/30 eth1/0/1-2</td>
+        <td>FW1</td>
+        <td>eth0/1-2</td>
+    </tr>
+    <tr>
+        <td>vlan 10（办公）eth1/0/3-4 192.168.10.1/24</td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>vlan 20（研发）eth1/0/5-6 192.168.20.1/24</td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>vlan 30（产品）eth1/0/7-8 192.168.30.1/24</td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>vlan 40（销售）eth1/0/9-10 192.168.40.1/24</td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>vlan 50（无线）192.168.50.1/24</td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>vlan 100(ap-manage) eth1/0/24 192.168.100.1/24</td>
+        <td>AC</td>
+        <td>eth1/0/24</td>
+    </tr>
+    <tr>
+        <td>loopback1 10.0.0.253/32</td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td rowspan="2" >AC</td>
+        <td>vlan 100(ap-manage) eth1/0/24 192.168.100.254</td>
+        <td>SW1</td>
+        <td>eth1/0/24</td>
+    </tr>
+    <tr>
+        <td>eth1/0/1</td>
+        <td>AP</td>
+        <td>ETH</td>
+    </tr>
+    <tr>
+        <td rowspan="2" >FW2</td>
+        <td>eth0/1（trust 安全域）10.20.0.1/30</td>
+        <td>SW2</td>
+        <td>eth1/0/24</td>
+    </tr>
+    <tr>
+        <td>eth0/5（untrust 安全域）223.19.0.2/30</td>
+        <td>SW3(internet)</td>
+        <td>eth1/0/19</td>
+    </tr>
+    <tr>
+        <td rowspan="3" >SW2</td>
+        <td>vlan 1000 eth1/0/24 10.20.0.2/30</td>
+        <td>FW1</td>
+        <td>eth0/1</td>
+    </tr>
+    <tr>
+        <td>vlan 128（办公）eth1/0/1-8 192.168.128.0/24</td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>vlan 129（销售）eth1/0/9-16 192.168.129.0/24</td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td rowspan="3">RT1</td>
+        <td>G0/0 223.20.0.2/30</td>
+        <td>SW3 (internet)</td>
+        <td>eth1/0/20</td>
+    </tr>
+    <tr>
+        <td>G0/1.130 192.168.130.1/24</td>
+        <td>SW3</td>
+        <td>eth1/0/24</td>
+    </tr>
+    <tr>
+        <td>G0/1.131 192.168.131.1/24</td>
+        <td>SW3</td>
+        <td>eth1/0/24</td>
+    </tr>
+    <tr>
+        <td rowspan="3" >SW3</td>
+        <td>eth1/0/24</td>
+        <td>RT1</td>
+        <td>G0/1</td>
+    </tr>
+    <tr>
+        <td>Vlan 130 eth1/0/1-8</td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Vlan 131 eth1/0/9-16</td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td rowspan="3" >SW3(Internet)</td>
+        <td>Vlan18 eth1/0/18 223.18.0.1/30</td>
+        <td>FW1</td>
+        <td>eth0/5</td>
+    </tr>
+    <tr>
+        <td>Vlan19 eth1/0/19 223.19.0.1/30</td>
+        <td>FW2</td>
+        <td>eth0/5</td>
+    </tr>
+    <tr>
+        <td>Vlan20 eth1/0/20 223.20.0.1/30</td>
+        <td>RT1</td>
+        <td>G0/0</td>
+    </tr>
+    <tr>
+        <td>AP</td>
+        <td>ETH</td>
+        <td>AC</td>
+        <td>eth1/0/1</td>
+    </tr>
+    <tr>
+        <td>PC1</td>
+        <td>NIC</td>
+        <td>SW1</td>
+        <td>eth1/0/9</td>
+    </tr>
+    <tr>
+        <td>PC2</td>
+        <td>NIC</td>
+        <td>SW2</td>
+        <td>eth1/0/1</td>
+    </tr>
+</table>
+
+<h3 id="四、DEMO"><a href="#四、DEMO" class="headerlink" title="四、DEMO"></a>四、DEMO</h3><p>设备厂商：H3C，当然竞赛时用的是锐捷&#x2F;思科的相关设备</p>
+<details>
+  <summary>Internet 相关配置</summary>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+</details>
+
+<details>
+  <summary>SW1 相关配置</summary>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+</details>
+
+<details>
+  <summary>FW1 相关配置</summary>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+</details>
+
+<details>
+  <summary>AC 相关配置</summary>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+</details>
+
+<details>
+  <summary>SW2 相关配置</summary>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## vlan</span></span><br><span class="line">[SW2]vlan 128 129 1000</span><br><span class="line">[SW2]int vlan 128</span><br><span class="line">[SW2-vlan-int128]ip add 192.168.128.1 24</span><br><span class="line">[SW2-vlan-int128]quit</span><br><span class="line">[SW2]int vlan 129</span><br><span class="line">[SW2-vlan-int129]ip add 192.168.129.1 24</span><br><span class="line">[SW2]int vlan1000</span><br><span class="line">[SW2-vlan-int1000]ip add 10.20.0.2 30</span><br><span class="line">[SW2-vlan-int1000]quit</span><br><span class="line">[SW2]int g1/0/24</span><br><span class="line">[SW2-G1/0/24]port link-type access</span><br><span class="line">[SW2-G1/0/24]port access vlan 1000</span><br><span class="line"></span><br><span class="line"><span class="comment">## SSH</span></span><br><span class="line">[SW2]ssh server <span class="built_in">enable</span></span><br><span class="line">[SW2]line vty 0 4</span><br><span class="line">[SW2-line-vty0-4]authentication-mode scheme</span><br><span class="line">[SW2-line-vty0-4]local-user ssh_user class manage</span><br><span class="line">[SW2-luser-manage-ssh_user]password simple ssh@2023</span><br><span class="line">[SW2-luser-manage-ssh_user]service-type ssh</span><br><span class="line"></span><br><span class="line"><span class="comment">## 静态路由</span></span><br><span class="line">[SW2]ip route-static 0.0.0.0 0.0.0.0 10.20.0.1</span><br></pre></td></tr></table></figure>
+</details>
+
+<details>
+  <summary>RT1 相关配置</summary>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## DHCP</span></span><br><span class="line">[RT1]dhcp <span class="built_in">enable</span></span><br><span class="line">[RT1]dhcp server ip-pool wx130</span><br><span class="line">[RT1-dhcp-pool-wx130]gateway-list 192.168.130.1</span><br><span class="line">[RT1-dhcp-pool-wx130]network 192.168.130.0 mask 255.255.255.0</span><br><span class="line">[RT1-dhcp-pool-wx130]dns-list 218.2.2.2</span><br><span class="line">[RT1-dhcp-pool-wx130]quit</span><br><span class="line">[RT1]dhcp server ip-pool wx131</span><br><span class="line">[RT1-dhcp-pool-wx131]gateway-list 192.168.131.1</span><br><span class="line">[RT1-dhcp-pool-wx131]network 192.168.131.0 mask 255.255.255.0</span><br><span class="line">[RT1-dhcp-pool-wx131]dns-list 218.2.2.2</span><br><span class="line"></span><br><span class="line"><span class="comment">## 单臂路由</span></span><br><span class="line">[RT1]int G0/1.130</span><br><span class="line">[RT1-G0/1.130]ip address 192.168.130.1 24</span><br><span class="line">[RT1-G0/1.130]vlan-type dot1q vid 130</span><br><span class="line">[RT1-G0/1.130]quit</span><br><span class="line">[RT1]int G0/1.131</span><br><span class="line">[RT1-G0/1.131]ip address 192.168.131.1 24</span><br><span class="line">[RT1-G0/1.131]vlan-type dot1q vid 131</span><br><span class="line"></span><br><span class="line"><span class="comment">## IP地址</span></span><br><span class="line">[RT1]int G0/0</span><br><span class="line">[RT1-G0/0]ip address 223.19.0.2 30</span><br><span class="line"></span><br><span class="line"><span class="comment">## NAT</span></span><br><span class="line">[RT1]acl basic 2000</span><br><span class="line">[RT1-acl-ipv4-basic-2000]rule 0 permit <span class="built_in">source</span> 192.168.0.0 0.0.255.255</span><br><span class="line">[RT1]nat address-group 1</span><br><span class="line">[RT1-nat-address-group-1]address 223.19.0.1 223.19.0.1</span><br><span class="line">[RT1]int g0/0</span><br><span class="line">[RT1-G0/0]nat outbound 2000 address-group 1</span><br></pre></td></tr></table></figure>
+</details>
+
+<details>
+  <summary>SW3 相关配置</summary>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## VLAN</span></span><br><span class="line">[SW3]vlan 130 131</span><br><span class="line">[SW3]int range g1/0/1 to g1/0/8</span><br><span class="line">[SW3-if-range]port link-type access</span><br><span class="line">[SW3-if-range]port access vlan130</span><br><span class="line">[SW3]int range g1/0/9 to g1/0/16</span><br><span class="line">[SW3-if-range]port link-type access</span><br><span class="line">[SW3-if-range]port access vlan131</span><br><span class="line">[SW3]int g1/0/24</span><br><span class="line">[SW3-g1/0/24]port link-type trunk</span><br><span class="line">[SW3--g1/0/24]port trunk permit vlan 130 131</span><br><span class="line"></span><br><span class="line"><span class="comment">## 限速</span></span><br><span class="line">[SW3]int range g1/0/1 to g1/0/8</span><br><span class="line">[SW3-if-range]speed 100</span><br><span class="line"></span><br><span class="line"><span class="comment">## 端口安全功能</span></span><br><span class="line">[SW3]port-security <span class="built_in">enable</span></span><br><span class="line">[SW3]port-security timer disableport 120</span><br><span class="line">[SW3]int range g1/0/11 to g1/0/12</span><br><span class="line">[SW3-if-range]port-security intrusion-mode disableport-temporarily</span><br><span class="line">[SW3-if-range]port-security max-mac-count 5</span><br><span class="line"></span><br><span class="line"><span class="comment">## DHCP Snooping</span></span><br><span class="line">[SW3]dhcp snooping <span class="built_in">enable</span></span><br><span class="line">[SW3]int g1/0/24</span><br><span class="line">[SW3-g1/0/24]dhcp snooping trust</span><br></pre></td></tr></table></figure>
+</details>
+
+<details>
+  <summary>FW2 相关配置</summary>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## web配置</span></span><br><span class="line">[FW2]int g1/0/1</span><br><span class="line">[FW2-G1/0/1]ip add 192.168.0.120 24</span><br><span class="line">[FW2]security-zone name management</span><br><span class="line">[FW2-security-zone-Management]import interface GigabitEthernet 1/0/1</span><br><span class="line">[FW2-security-zone-Management]quit</span><br><span class="line">[FW2]acl advanced 3000</span><br><span class="line">[FW2-acl-ipv4-adv-3000]rule permit ip</span><br><span class="line">[FW2-acl-ipv4-adv-3000]quit</span><br><span class="line">[FW2]zone-pair security <span class="built_in">source</span> management destination <span class="built_in">local</span></span><br><span class="line">[FW2-zone-pair-security-Management-Local]packet-filter 3000</span><br><span class="line">[FW2-zone-pair-security-Management-Local]zone-pair security <span class="built_in">source</span> <span class="built_in">local</span> destination management</span><br><span class="line">[FW2-zone-pair-security-Local-Management]packet-filter 3000</span><br><span class="line"></span><br><span class="line"><span class="comment">## VPN</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## NAT</span></span><br><span class="line">[FW2]time-range work-time 8:30 to 17:30 working-day</span><br><span class="line">[FW2]acl basic 2000</span><br><span class="line">[FW2-acl-ipv4-basic-2000]rule 0 permit <span class="built_in">source</span> 192.168.128.0 0.0.0.255 time-range work-time</span><br><span class="line">[FW2-acl-ipv4-basic-2000]rule 1 permit <span class="built_in">source</span> 192.168.129.0 0.0.0.255</span><br><span class="line">[FW2]nat address-group 1</span><br><span class="line">[FW2-nat-address-group-1]address 223.18.0.1 223.18.0.1</span><br><span class="line">[FW2]int g1/0/5</span><br><span class="line">[FW2-G1/0/5]nat outbound 2000 address-group 1</span><br><span class="line"></span><br><span class="line"><span class="comment">## IP地址配置</span></span><br><span class="line">[FW2]int g1/0/5</span><br><span class="line">[FW2-G1/0/5]ip add 223.18.0.2 30</span><br><span class="line">[FW2]int g1/0/0</span><br><span class="line">[FW2-G1/0/0]ip add 10.20.0.1 30</span><br><span class="line"></span><br><span class="line"><span class="comment">## 安全策略</span></span><br><span class="line"><span class="comment">### 将对应端口加入对应的安全域</span></span><br><span class="line">[FW2]security-zone name trust</span><br><span class="line">[FW2-security-zone-Trust]import int g1/0/0</span><br><span class="line">[FW2]security-zone name untrust</span><br><span class="line">[FW2-security-zone-untrust]import int g1/0/5</span><br><span class="line"><span class="comment">### 放行Trust到Untrust的报文</span></span><br><span class="line">[FW2]security-policy ip</span><br><span class="line">rule 0 name trust-untrust</span><br><span class="line">action pass</span><br><span class="line">source-zone trust</span><br><span class="line">destination-zone untrust</span><br><span class="line"><span class="comment">### 放行Trust到Local的报文，配置完Trust域的设备可以PING通防火墙</span></span><br><span class="line">[FW2]security-policy ip</span><br><span class="line">rule 1 name trust-local</span><br><span class="line">action pass</span><br><span class="line">source-zone trust</span><br><span class="line">destination-zone <span class="built_in">local</span></span><br><span class="line"><span class="comment">### 放行Local到其他域的报文，配置完防火墙可以PING通其他设备</span></span><br><span class="line">rule 2 name local-all</span><br><span class="line">action pass</span><br><span class="line">source-zone <span class="built_in">local</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## 静态路由</span></span><br><span class="line">[FW2]ip route-static 0.0.0.0 0.0.0.0 223.18.0.1</span><br><span class="line">[FW2]ip route-static 192.168.128.0 255.255.255.0 10.20.0.2</span><br><span class="line">[FW2]ip route-static 192.168.129.0 255.255.255.0 10.20.0.2</span><br></pre></td></tr></table></figure>
+</details>
+</article>
+    
+    
+
+</div>
+<div id="post-next-prev" class="row">
+    <div class="col-lg-12">
+        <!-- title -->
+        <h5 class="trm-title-with-divider">
+            其他文章
+            <span data-number="02"></span>
+        </h5>
+    </div>
+    
+    
+        <div class="col-lg-6">
+    <div class="trm-blog-card trm-scroll-animation" data-scroll data-scroll-offset="40">
+        <a href="/2022/12/30/hello-world/" class="trm-cover-frame trm-anima-link">
+            
+            
+                <img alt="cover" class="no-fancybox" src="https://kaifa.baidu.com/assets/6fbaf4965f338d76ce27.png">
+            
+        </a>
+        
+        <div class="trm-card-descr">
+            <div class="trm-label trm-category trm-mb-20">
+                <a href=" /categories/Plugins/">
+                    Plugins
+                </a>
+            </div>
+            <h5>
+                <a href="/2022/12/30/hello-world/" class="trm-anima-link">
+                    Tag Plugins
+                </a>
+            </h5>
+            <div class="trm-divider trm-mb-20 trm-mt-20"></div>
+            <ul class="trm-card-data trm-label">
+                <li>22/12/30</li>
+                <li>15:08</li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</div>
+    
+</div>
+
+    
+
+
+
+                    <div class="trm-divider footer-divider"></div>
+
+                    <!-- footer -->
+                    <footer class="trm-scroll-animation" data-scroll data-scroll-offset="50">
+
+    
+
+    
+
+    
+        <div class="trm-footer-item">
+            <span>
+                由 <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 驱动 v6.3.0
+            </span>
+            <span class="footer-separator" data-separator=" | "></span>
+            <span> 
+                主题 - 
+                <a rel="noopener" href='https://github.com/MaLuns/hexo-theme-async' target='_blank'>Async</a>
+                v2.0.9
+            </span>
+        </div>
+      
+
+    
+        <div class="trm-footer-item">
+            博客已萌萌哒运行 <span id="since" class="trm-accent-color"></span> 天
+        </div>
+     
+
+     
+</footer>
+
+<script>
+    function show_date_time () {
+        var BirthDay = new Date("07/02/2023 17:00:00");
+        var today = new Date();
+        var timeold = (today.getTime() - BirthDay.getTime());
+        var msPerDay = 24 * 60 * 60 * 1000
+        var day = Math.floor(timeold / msPerDay)
+        since.innerHTML = day
+    }
+    show_date_time()
+</script>
+ 
+                    <!-- footer end -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+            <!-- body end -->
+
+            <div class="trm-fixed-container" data-scroll data-scroll-sticky data-scroll-target=".locomotive-scroll__sticky-target" data-scroll-offset="-10">
+    
+    
+    <div id="trm-back-top" class="trm-fixed-btn" data-title="回到顶部">
+        <i class="iconfont fas fa-arrow-up"></i>
+    </div>
+</div>
+          </div>
+        </div>
+      </div>
+      <!-- scroll container end -->
+
+  </div>
+  <!-- app wrapper end -->
+
+  
+  <!-- Plugin -->
+
+
+
+
+    
+    
+<script src="https://unpkg.com/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+
+    
+<script src="https://unpkg.com/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+
+    
+
+    
+        <script src="/js/plugins/typing.js?v=2.0.9"></script>
+    
+
+    
+
+    <!-- 数学公式 -->
+    
+
+    <!-- 评论插件 -->
+    
+        
+
+        
+    
+
+
+
+<!-- CDN -->
+
+
+    
+
+    
+
+    
+
+
+
+
+    <!-- Service Worker -->
+    
+    <!-- baidu push -->
+    
+
+
+<script id="async-script" src="/js/main.js?v=2.0.9"></script>
+
+</body>
+
+</html>
