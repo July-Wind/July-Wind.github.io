@@ -7,16 +7,22 @@
 <meta name="full-screen" content="yes">
 <meta name="theme-color" content="#317EFB" />
 <meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=0" name="viewport">
-<meta property="og:type" content="website">
-<meta property="og:title" content="子非明月">
-<meta property="og:url" content="http://example.com/archives/index.html">
+<meta name="description" content="Linux 网络服务配置一、拓扑图 二、规划表   序号 设备名称 Ipv4 地址 默认网关 完全合格域名    1 高性能工作站 192.168.100.1&#x2F;24     2 管理PC 192.168.100.2&#x2F;24     3 client01 222.188.121.156&#x2F;29 222.188.121.153 client01.cloud   4 vhost">
+<meta property="og:type" content="article">
+<meta property="og:title" content="选拔赛网络系统 - 模块C">
+<meta property="og:url" content="http://example.com/2023/07/21/skillC/index.html">
 <meta property="og:site_name" content="子非明月">
+<meta property="og:description" content="Linux 网络服务配置一、拓扑图 二、规划表   序号 设备名称 Ipv4 地址 默认网关 完全合格域名    1 高性能工作站 192.168.100.1&#x2F;24     2 管理PC 192.168.100.2&#x2F;24     3 client01 222.188.121.156&#x2F;29 222.188.121.153 client01.cloud   4 vhost">
 <meta property="og:locale">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="article:published_time" content="2023-07-21T11:14:09.000Z">
+<meta property="article:modified_time" content="2023-07-22T14:36:05.118Z">
 <meta property="article:author" content="ShiYi">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/404.jpg">
 
 
-<title >子非明月</title>
+<title >选拔赛网络系统 - 模块C</title>
 
 <!-- Favicon -->
 
@@ -62,7 +68,7 @@
 
 <!-- Variable -->
 <script>window.ASYNC_CONFIG = {"hostname":"example.com","author":"ShiYi","root":"/","typed_text":["度过一生"],"theme_version":"2.0.9","theme":{"switch":true,"default":"style-light"},"favicon":{"logo":"img/favicon.png","icon16":"img/favicon.png","icon32":"img/favicon.png","appleTouchIcon":"img/favicon.png","webmanifest":"/site.webmanifest","visibilitychange":true,"hidden":"/failure.ico","showText":"(/≧▽≦/)咦！又好了！","hideText":"(●—●)喔哟，崩溃啦！"},"i18n":{"placeholder":"搜索文章...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）","author":"本文作者：","copyright_link":"本文链接：","copyright_license_title":"版权声明：","copyright_license_content":"本博客所有文章除特别声明外，均默认采用 undefined 许可协议。","copy_success":"复制成功","copy_failure":"复制失败","open_read_mode":"进入阅读模式","exit_read_mode":"退出阅读模式","notice_outdate_message":"距离上次更新已经 undefined 天了, 文章内容可能已经过时。","just":"刚刚","min":"分钟前","hour":"小时前","day":"天前","month":"个月前"},"swup":false,"plugin":{"flickr_justified_gallery":"https://unpkg.com/flickr-justified-gallery@latest/dist/fjGallery.min.js"},"icons":{"sun":"far fa-sun","moon":"far fa-moon","play":"fas fa-play","email":"far fa-envelope","next":"fas fa-arrow-right","calendar":"far fa-calendar-alt","clock":"far fa-clock","user":"far fa-user","back_top":"fas fa-arrow-up","close":"fas fa-times","search":"fas fa-search","reward":"fas fa-hand-holding-usd","user_tag":"fas fa-user-alt","toc_tag":"fas fa-th-list","read":"fas fa-book-reader","arrows":"fas fa-arrows-alt-h","double_arrows":"fas fa-angle-double-down","copy":"fas fa-copy"},"icontype":"font","highlight":{"plugin":"highlighjs","theme":true,"copy":true,"lang":true,"title":"mac","height_limit":false}};</script>
-<script id="async-page-config">window.PAGE_CONFIG = {"isPost":false,"isHome":false,"postUpdate":"2023-07-22 22:36:19"};</script>
+<script id="async-page-config">window.PAGE_CONFIG = {"isPost":true,"isHome":false,"postUpdate":"2023-07-22 22:36:05"};</script>
 
 <!-- Theme mode css -->
 <link data-swup-theme rel="stylesheet" href="/css/index.css?v=2.0.9" id="trm-switch-style">
@@ -239,7 +245,8 @@
             <!-- top bar end -->
 
             <!-- body -->
-            <div class="trm-content-start">
+            
+<div class="trm-content-start">
     <!-- banner -->
     <div class="trm-banner" data-scroll data-scroll-direction="vertical">
     
@@ -256,17 +263,15 @@
         <div class="container" data-scroll data-scroll-direction="vertical" data-scroll-speed="0">
             <div class="row">
                 
-                <div class="col-lg-4"></div>
-                
-                <div class="col-lg-8">
+                <div class="col-lg-12">
 
                     <!-- banner title -->
-                    <div class="trm-banner-text ">
+                    <div class="trm-banner-text trm-text-center ">
                         <div class="trm-label trm-mb-20">
-                            The article archive
+                            NEWS LETTER
                         </div>
                         <h1 class="trm-mb-30 trm-hsmb-font">
-                            云间连下榻，<br>天上接行杯。
+                            选拔赛网络系统 - 模块C
                         </h1>
 
                         
@@ -276,7 +281,7 @@
                                 </li>
                                 <li>
                                     <span>
-                                        archives
+                                        2023
                                     </span
                                 ></li>
                             </ul>
@@ -301,280 +306,217 @@
     <div class="container">
         <div class="row">
             
-                <div id="page-sidebar" class="col-lg-4 hidden-sm">
-                    <!-- main card -->
-                    
-
-<div class="trm-main-card-frame trm-sidebar">
-    <div class="trm-main-card" data-scroll data-scroll-repeat data-scroll-sticky data-scroll-target=".locomotive-scroll__sticky-target" data-scroll-offset="60"> 
-    
-        <!-- card header -->
-<div class="trm-mc-header">
-    <div class="trm-avatar-frame trm-mb-20">
-        <img alt="Avatar" class="trm-avatar" src="/./img/avatar.jpg">
-    </div>
-    <h5 class="trm-name trm-mb-15">
-        Admin
-    </h5>
-    
-        <div class="trm-label">
-            用喜欢的方式
-            <span class="trm-typed-text">
-                <!-- Words for theme.user.typedText -->
-            </span>
-        </div>
-    
-</div>
-<!-- card header end -->
-        <!-- sidebar social -->
-
-<div class="trm-divider trm-mb-40 trm-mt-40"></div>
-<div class="trm-social">
-    
-        <a href="https://github.com/July-wind" title="github" rel="nofollow" target="_blank">
-            <i class="iconfont fab fa-github"></i>
-        </a>
-    
-        <a href="tencent://message/?uin=2817808181&Site=Sambow&Menu=yes"" title="QQ" rel="nofollow" target="_blank">
-            <i class="iconfont fab fa-qq"></i>
-        </a>
-    
-        <a href="https://docker.com" title="Docker" rel="nofollow" target="_blank">
-            <i class="iconfont fab fa-docker"></i>
-        </a>
-    
-        <a href="https://labhub.eu.org" title="LabHub" rel="nofollow" target="_blank">
-            <i class="iconfont fab fa-codepen"></i>
-        </a>
-    
-</div>
-
-<!-- sidebar social end -->
-        <!-- info -->
-<div class="trm-divider trm-mb-40 trm-mt-40"></div>
-<ul class="trm-table trm-mb-20">
-    
-        <li>
-            <div class="trm-label">
-                Address:
-            </div>
-            <div class="trm-label trm-label-light">
-                China
-            </div>
-        </li>
-    
-        <li>
-            <div class="trm-label">
-                Age:
-            </div>
-            <div class="trm-label trm-label-light">
-                20
-            </div>
-        </li>
-    
-</ul>
-<!-- info end -->
-
-        
-    <div class="trm-divider trm-mb-40 trm-mt-40"></div>
-    <!-- action button -->
-    <div class="text-center">
-        <a href="mailto:shiyi2817808181@gmail.com" class="trm-btn">
-            联系我
-            <i class="iconfont far fa-envelope"></i>
-        </a>
-    </div>
-    <!-- action button end -->
-
-    
-    </div>
-</div>
-                    <!-- main card end -->
-                </div>
-            
-            <div id="page-content" class="col-lg-8">
+            <div id="page-content" class="col-lg-12">
                 <div class="trm-content" id="trm-content">
                     <div data-scroll data-scroll-repeat data-scroll-offset="500" id="about-triger"></div>
 
-                    <div class="row">
-    <div class="col-lg-12">
-        <div class="trm-card">
-            <div style="padding: 0 20px;">
-                
-                    <ul class="row trm-list" style="margin-bottom: 0px;"><li class="col-lg-4 trm-list-item" style="margin: 6px 0;"><a class="archive-list-link" href="/archives/2023/">2023</a><span class="archive-list-count">（3）</span></li><li class="col-lg-4 trm-list-item" style="margin: 6px 0;"><a class="archive-list-link" href="/archives/2022/">2022</a><span class="archive-list-count">（2）</span></li></ul>
-                
-            </div>
+                    <div id="post-info" class="row hidden-sm">
+    <div class="col-sm-4">
+        <div class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-calendar-alt trm-icon"></i><br>
+            07/21
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-clock trm-icon"></i><br>
+            19:14
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div id="post-author" class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-user trm-icon"></i><br>
+            ShiYi
         </div>
     </div>
 </div>
+<div class="trm-card ">
+    <article id="article-container" class="trm-publication">
+    <h2 id="Linux-网络服务配置"><a href="#Linux-网络服务配置" class="headerlink" title="Linux 网络服务配置"></a>Linux 网络服务配置</h2><h3 id="一、拓扑图"><a href="#一、拓扑图" class="headerlink" title="一、拓扑图"></a>一、拓扑图</h3><p><img src="/images/2023-07-2139539.png" alt="这里写图片描述" loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<h3 id="二、规划表"><a href="#二、规划表" class="headerlink" title="二、规划表"></a>二、规划表</h3><table>
+<thead>
+<tr>
+<th>序号</th>
+<th>设备名称</th>
+<th>Ipv4 地址</th>
+<th>默认网关</th>
+<th>完全合格域名</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>高性能工作站</td>
+<td>192.168.100.1&#x2F;24</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td>管理PC</td>
+<td>192.168.100.2&#x2F;24</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>3</td>
+<td>client01</td>
+<td>222.188.121.156&#x2F;29</td>
+<td>222.188.121.153</td>
+<td>client01.cloud</td>
+</tr>
+<tr>
+<td>4</td>
+<td>vhost01</td>
+<td>222.188.121.154&#x2F;29</td>
+<td>222.188.121.153</td>
+<td>vhost01.cloud</td>
+</tr>
+<tr>
+<td>5</td>
+<td>vhost02</td>
+<td>222.188.121.155&#x2F;29</td>
+<td>222.188.121.153</td>
+<td>vhost02.cloud</td>
+</tr>
+<tr>
+<td>6</td>
+<td>router01</td>
+<td>222.188.121.153&#x2F;29</td>
+<td>无</td>
+<td>router01.skills.org</td>
+</tr>
+<tr>
+<td>7</td>
+<td>lb01</td>
+<td>172.16.101.101&#x2F;20</td>
+<td>172.16.111.254</td>
+<td>lb01.skills.org</td>
+</tr>
+<tr>
+<td>8</td>
+<td>cache01</td>
+<td>172.16.101.201&#x2F;20</td>
+<td>172.16.111.254</td>
+<td>cache01.skills.org</td>
+</tr>
+<tr>
+<td>9</td>
+<td>cache02</td>
+<td>172.16.101.202&#x2F;20</td>
+<td>172.16.111.254</td>
+<td>cache02.skills.org</td>
+</tr>
+<tr>
+<td>10</td>
+<td>lb02</td>
+<td>172.16.112.101&#x2F;20</td>
+<td>172.16.111.254</td>
+<td>lb02.skills.org</td>
+</tr>
+<tr>
+<td>11</td>
+<td>app01</td>
+<td>172.16.112.201&#x2F;20</td>
+<td>172.16.111.254</td>
+<td>app01.skills.org</td>
+</tr>
+<tr>
+<td>12</td>
+<td>app02</td>
+<td>172.16.112.202&#x2F;20</td>
+<td>172.16.111.254</td>
+<td>app02.skills.org</td>
+</tr>
+<tr>
+<td>13</td>
+<td>router02</td>
+<td>172.16.112.102&#x2F;20</td>
+<td>172.16.127.254</td>
+<td>router02.skills.org</td>
+</tr>
+<tr>
+<td>14</td>
+<td>storage01</td>
+<td>10.10.10.101&#x2F;24</td>
+<td>10.10.10.254&#x2F;24</td>
+<td>storage01.data.center</td>
+</tr>
+<tr>
+<td>15</td>
+<td>storage02</td>
+<td>10.10.10.102&#x2F;24</td>
+<td>10.10.10.254&#x2F;24</td>
+<td>storage02.data.center</td>
+</tr>
+<tr>
+<td>16</td>
+<td>client02</td>
+<td>192.168.1.102&#x2F;24</td>
+<td>192.168.1.254&#x2F;24</td>
+<td>client02.office.cn</td>
+</tr>
+</tbody></table>
+<h3 id="三、任务清单"><a href="#三、任务清单" class="headerlink" title="三、任务清单"></a>三、任务清单</h3><ul>
+<li>构建服务专用网</li>
+<li>apache2服务</li>
+<li>动态网站服务</li>
+<li>NFS服务</li>
+<li>Mail服务</li>
+<li>Squid服务</li>
+<li>LVS服务</li>
+<li>NIS服务</li>
+<li>脚本编写</li>
+</ul>
+<h3 id="四、DEMO"><a href="#四、DEMO" class="headerlink" title="四、DEMO"></a>四、DEMO</h3>
+</article>
+    
+    
 
-<!-- history -->
-
-<div class="row">
+</div>
+<div id="post-next-prev" class="row">
     <div class="col-lg-12">
         <!-- title -->
         <h5 class="trm-title-with-divider">
-            
-                所有归档
-            
-            <span data-number="01"></span>
+            其他文章
+            <span data-number="02"></span>
         </h5>
     </div>
-    <div class="col-lg-12">
-        <!-- timeline -->
-        <div class="trm-timeline">
+    
+    
+        <div class="col-lg-6">
+    <div class="trm-blog-card trm-scroll-animation" data-scroll data-scroll-offset="40">
+        <a href="/2023/07/18/skillB/" class="trm-cover-frame trm-anima-link">
             
-            <div class="trm-timeline-item trm-scroll-animation" data-scroll data-scroll-offset="40">
-                <div class="trm-timeline-mark-light"></div>
-                <div class="trm-timeline-mark"></div>
-                <div class="trm-a trm-timeline-content more">
-                    
-                        <div class="trm-card-header">
-                            <div class="trm-left-side">
-                                <h6>
-                                    <a href="/2023/07/21/skillC/" class="trm-anima-link">
-                                        选拔赛网络系统 - 模块C
-                                    </a>
-                                </h6>
-                                <div class="trm-text-sm trm-accent-color trm-mt-15">
-                                    <ul class="trm-card-data trm-label ">
-                                        <li class="trm-accent-color">07/21</li>
-                                        <li class="trm-accent-color">19:14</li>
-                                        
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        
-                    
-                </div>
+            
+                <img alt="cover" class="no-fancybox" src="https://img1.baidu.com/it/u=3017304253,2467866386&fm=253&fmt=auto&app=138&f=JPEG?w=750&h=500">
+            
+        </a>
+        
+        <div class="trm-card-descr">
+            <div class="trm-label trm-category trm-mb-20">
+                <a href=" #.">
+                    未分类
+                </a>
             </div>
-            
-            <div class="trm-timeline-item trm-scroll-animation" data-scroll data-scroll-offset="40">
-                <div class="trm-timeline-mark-light"></div>
-                <div class="trm-timeline-mark"></div>
-                <div class="trm-a trm-timeline-content more">
-                    
-                        <div class="trm-card-header">
-                            <div class="trm-left-side">
-                                <h6>
-                                    <a href="/2023/07/18/skillB/" class="trm-anima-link">
-                                        选拔赛网络系统 - 模块B
-                                    </a>
-                                </h6>
-                                <div class="trm-text-sm trm-accent-color trm-mt-15">
-                                    <ul class="trm-card-data trm-label ">
-                                        <li class="trm-accent-color">07/18</li>
-                                        <li class="trm-accent-color">15:44</li>
-                                        
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        
-                    
-                </div>
-            </div>
-            
-            <div class="trm-timeline-item trm-scroll-animation" data-scroll data-scroll-offset="40">
-                <div class="trm-timeline-mark-light"></div>
-                <div class="trm-timeline-mark"></div>
-                <div class="trm-a trm-timeline-content more">
-                    
-                        <div class="trm-card-header">
-                            <div class="trm-left-side">
-                                <h6>
-                                    <a href="/2023/07/15/skillA/" class="trm-anima-link">
-                                        选拔赛网络系统 - 模块A
-                                    </a>
-                                </h6>
-                                <div class="trm-text-sm trm-accent-color trm-mt-15">
-                                    <ul class="trm-card-data trm-label ">
-                                        <li class="trm-accent-color">07/15</li>
-                                        <li class="trm-accent-color">16:05</li>
-                                        
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        
-                    
-                </div>
-            </div>
-            
-            <div class="trm-timeline-item trm-scroll-animation" data-scroll data-scroll-offset="40">
-                <div class="trm-timeline-mark-light"></div>
-                <div class="trm-timeline-mark"></div>
-                <div class="trm-a trm-timeline-content more">
-                    
-                        <div class="trm-card-header">
-                            <div class="trm-left-side">
-                                <h6>
-                                    <a href="/2022/12/30/hello-world/" class="trm-anima-link">
-                                        Tag Plugins
-                                    </a>
-                                </h6>
-                                <div class="trm-text-sm trm-accent-color trm-mt-15">
-                                    <ul class="trm-card-data trm-label ">
-                                        <li class="trm-accent-color">12/30</li>
-                                        <li class="trm-accent-color">15:08</li>
-                                        
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        
-                            <div class="trm-publication trm-mt-15">
-                                <p>主题内置的一些标签插件说明和示例。</p>
-                            </div>
-                        
-                    
-                </div>
-            </div>
-            
-            <div class="trm-timeline-item trm-scroll-animation" data-scroll data-scroll-offset="40">
-                <div class="trm-timeline-mark-light"></div>
-                <div class="trm-timeline-mark"></div>
-                <div class="trm-a trm-timeline-content more">
-                    
-                        <div class="trm-card-header">
-                            <div class="trm-left-side">
-                                <h6>
-                                    <a href="/2022/09/21/markdown/" class="trm-anima-link">
-                                        Markdown
-                                    </a>
-                                </h6>
-                                <div class="trm-text-sm trm-accent-color trm-mt-15">
-                                    <ul class="trm-card-data trm-label ">
-                                        <li class="trm-accent-color">09/21</li>
-                                        <li class="trm-accent-color">15:25</li>
-                                        
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        
-                            <div class="trm-publication trm-mt-15">
-                                <p>主题 Hexo-theme-async 文章页面适配预览。</p>
-                            </div>
-                        
-                    
-                </div>
-            </div>
-            
+            <h5>
+                <a href="/2023/07/18/skillB/" class="trm-anima-link">
+                    选拔赛网络系统 - 模块B
+                </a>
+            </h5>
+            <div class="trm-divider trm-mb-20 trm-mt-20"></div>
+            <ul class="trm-card-data trm-label">
+                <li>23/07/18</li>
+                <li>15:44</li>
+                
+                
+            </ul>
         </div>
-        <!-- timeline end -->
     </div>
 </div>
+    
+</div>
 
-<!-- history end -->
-
-
-    <div class="trm-pagination">
-        <span class="page-number current">1</span>
-    </div>
-
-
+    
 
 
 
@@ -671,6 +613,10 @@
     
 
     <!-- 评论插件 -->
+    
+        
+
+        
     
 
 
