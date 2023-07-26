@@ -3464,9 +3464,6 @@ pre .coffeescript .title {
     font-size: 30px !important;
   }
 }
-body {
-  filter: grayscale(1);
-}
 :root {
   --primary: #5a5df0;
   --primary-70: rgba(90, 93, 240, 0.7);
